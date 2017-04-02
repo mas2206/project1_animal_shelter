@@ -2,6 +2,8 @@ require_relative('../db/sql_runner')
 
 class Owner
 
+  attr_reader :id, :name
+
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
@@ -10,7 +12,7 @@ class Owner
   def save()
     sql = "INSERT INTO owners (name) VALUES ('#{@name}') RETURNING *;"
     results = SqlRunner.run(sql)
-    @id = results.first['id'].to_i
+    @id = results.first()['id'].to_i
   end
 
   def delete()
@@ -25,12 +27,12 @@ class Owner
   end
 
   def self.find(id)
-    sql = "SELECT * FROM owners WHERE id = #{@id};"
+    sql = "SELECT * FROM owners WHERE id = #{id};"
     results = SqlRunner.run(sql)
     return Owner.new(results.first)
   end
 
-  def delete_all()
+  def self.delete_all()
     sql = "DELETE FROM owners;"
     SqlRunner.run(sql)
   end
