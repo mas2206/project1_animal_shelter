@@ -40,7 +40,7 @@ class Adoption
   end
 
   def self.find(id)
-    sql = "SELECT FROM adoptions WHERE id = #{id};"
+    sql = "SELECT * FROM adoptions WHERE id = #{id};"
     results = SqlRunner.run(sql)
     return Adoption.new(results.first)
   end
