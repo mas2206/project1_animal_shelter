@@ -6,7 +6,8 @@ CREATE TABLE animals (
   id SERIAL2 PRIMARY KEY,
   name VARCHAR(255),
   species VARCHAR(255),
-  admission_date DATE
+  admission_date DATE,
+  availability BOOLEAN
 );
 
 CREATE TABLE owners (

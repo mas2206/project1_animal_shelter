@@ -1,0 +1,5 @@
+<% @adoptions.each do |adoption| %>
+  <p>Animal: <%= adoption.animal.name %> the <%= adoption.animal.species %></p>
+  <p>New Owner: <%= adoption.owner.name %></p>
+  <hr/>
+<% end %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animal Shelter</title>
+    <link rel="icon" href="/images/shelter_icon.png" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/animals">View all animals</a>
+        </li>
+        <li>
+          <a href="/owners">View all potential owners</a>
+        </li>
+        <li>
+          <a href="/adoptions">View all adoptions</a>
+        </li>
+        <li>
+          <a href="/adoptions/new">Create new adoption</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="content">
+    <%= yield %>
+    </section>
+  </body>
+</html>

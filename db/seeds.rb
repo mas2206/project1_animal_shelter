@@ -12,19 +12,22 @@ Animal.delete_all()
 animal1 = Animal.new({
   "name" => "Rover",
   "species" => "dog",
-  "admission_date" => "2016-02-12"
+  "admission_date" => "2016-12-25",
+  "availability" => false
   })
 
 animal2 = Animal.new({
   "name" => "Rascal",
   "species" => "cat",
-  "admission_date" => "2017-02-10"
+  "admission_date" => "2017-02-10",
+  "availability" => true
   })
 
 animal3 = Animal.new({
   "name" => "Alfie",
   "species" => "tortoise",
-  "admission_date" => "2017-03-29"
+  "admission_date" => "2017-03-29",
+  "availability" => true
   })
 
 animal1.save()
