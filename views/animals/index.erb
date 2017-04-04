@@ -1,5 +1,8 @@
 <h1>All animals</h1>
 
+<a href="/animals/adoptable">View only adoptable animals</a>
+<a href="/animals/non_adoptable">View only non-adoptable animals</a>
+
 <% @animals.each do |animal| %>
   <p>Name: <%= animal.name %></p>
   <p>Type: <%= animal.type %></p>

@@ -15,6 +15,11 @@ class Owner
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE owners SET name = '#{@name}' WHERE id = '#{@id}'"
+    SqlRunner.run(sql)
+  end
+
   def delete()
     sql = "DELETE FROM owners WHERE id = #{@id};"
     SqlRunner.run(sql)

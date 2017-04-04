@@ -16,8 +16,8 @@
 
   <label for="animal-availability">Availability:</label>
   <select id="animal-availability" name="availability">
-    <option value="true" <%= 'selected' if @animal.availability == 'Can be adopted' %>/>Can be adopted</option>
-    <option value="false" <%= 'selected' if @animal.availability == 'Cannot be adopted' %>/>Cannot be adopted</option>
+    <option value="true" <%= 'selected' if @animal.availability == 't' %>/>Can be adopted</option>
+    <option value="false" <%= 'selected' if @animal.availability == 'f' %>/>Cannot be adopted</option>
   </select>
   <br/>
   <br/>

@@ -11,6 +11,16 @@ get '/animals/new' do
   erb(:'animals/new')
 end
 
+get '/animals/adoptable' do
+  @animals = Animal.get_adoptable()
+  erb(:'animals/index')
+end
+
+get '/animals/non_adoptable' do
+  @animals = Animal.get_non_adoptable()
+  erb(:'animals/index')
+end
+
 post '/animals' do
   animal = Animal.new(params)
   animal.save()

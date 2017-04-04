@@ -2,5 +2,15 @@
 
 <% @owners.each do |owner| %>
   <p>Name: <%= owner.name %></p>
+  <form method="get" action="/owners/<%= owner.id %>/update">
+    <input type="submit" value="Update owner"/>
+  </form>
+
+  <br/>
+
+  <form method="post" action="/owners/<%= owner.id %>/delete">
+    <input type="submit" value="Delete owner"/>
+  </form>
   <hr/>
+
 <% end %>

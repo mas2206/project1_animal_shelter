@@ -23,6 +23,18 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  def self.get_adoptable()
+    sql = "SELECT * FROM animals WHERE availability = true"
+    results = SqlRunner.run(sql)
+    return results.map {|animals_hash| Animal.new(animals_hash)}
+  end
+
+  def self.get_non_adoptable()
+    sql = "SELECT * FROM animals WHERE availability = false"
+    results = SqlRunner.run(sql)
+    return results.map {|animals_hash| Animal.new(animals_hash)}
+  end
+
   def delete()
     sql = "DELETE FROM animals WHERE id = #{@id};"
     SqlRunner.run(sql)
