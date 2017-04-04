@@ -1,0 +1,31 @@
+<h1>Submit a new animal</h1>
+
+<form method="post" action="/animals">
+  <label for="animal-name">Name:</label>
+  <input id="animal-name" type="text" name="name" />
+  <br/>
+
+  <label for="animal-type">Species:</label>
+  <select id="animal-type" name="type">
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="gerbil">Gerbil</option>
+    <option value="golfish">Goldfish</option>
+    <option value="tortoise">Tortoise</option>
+  </select>
+  <br/>
+
+  <label for="admission-date">Admission Date:</label>
+  <input id="admission-date" type="date" name="admission_date"/>
+  <br/>
+
+  <label for="animal-availability">Availability:</label>
+  <select id="animal-availability" name="availability">
+    <option value="true">Can be adopted</option>
+    <option value="false">Cannot be adopted</option>
+  </select>
+  <br/>
+  <br/>
+
+  <input type="submit" value="Submit new animal"/>
+</form>

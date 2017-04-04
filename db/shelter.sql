@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS animals;
 CREATE TABLE animals (
   id SERIAL2 PRIMARY KEY,
   name VARCHAR(255),
-  species VARCHAR(255),
+  type VARCHAR(255),
   admission_date DATE,
   availability BOOLEAN
 );
