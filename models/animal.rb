@@ -18,6 +18,11 @@ class Animal
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE animals SET name = '#{@name}', type = '#{@type}', admission_date = '#{@admission_date}', availability = '#{@availability}' WHERE id = '#{@id}'"
+    SqlRunner.run(sql)
+  end
+
   def delete()
     sql = "DELETE FROM animals WHERE id = #{@id};"
     SqlRunner.run(sql)

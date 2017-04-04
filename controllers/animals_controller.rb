@@ -16,3 +16,20 @@ post '/animals' do
   animal.save()
   redirect to ('/animals')
 end
+
+get '/animals/:id/update' do
+  @animal = Animal.find(params[:id])
+  erb(:'animals/update')
+end
+
+post '/animals/:id' do
+  @animal = Animal.new(params)
+  @animal.update()
+  redirect to ('/animals')
+end
+
+post '/animals/:id/delete' do
+  @animal = Animal.find(params[:id])
+  @animal.delete()
+  redirect to ('/animals')
+end

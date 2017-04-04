@@ -11,5 +11,16 @@
       Cannot be adopted
   <% end %>
   </p>
+
+  <form method="get" action="/animals/<%= animal.id %>/update">
+    <input type="submit" value="Update animal"/>
+  </form>
+
+  <br/>
+
+  <form method="post" action="/animals/<%= animal.id %>/delete">
+    <input type="submit" value="Delete animal"/>
+  </form>
   <hr/>
+
 <% end %>
