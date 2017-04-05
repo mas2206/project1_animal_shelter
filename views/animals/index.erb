@@ -1,7 +1,18 @@
-<h1>All animals</h1>
+<br/>
+<br/>
 
-<a href="/animals/adoptable">View only adoptable animals</a>
-<a href="/animals/non_adoptable">View only non-adoptable animals</a>
+<a class="sub_header_link" href="/animals/new">Submit a new animal</a>
+
+<br/>
+<br/>
+<br/>
+
+<a class="animals_view_filter" href="/animals/adoptable">View only adoptable animals</a>
+|||
+<a class = "animals_view_filter" href="/animals/non_adoptable">View only non-adoptable animals</a>
+
+<br/>
+<br/>
 
 <% @animals.each do |animal| %>
   <p>Name: <%= animal.name %></p>

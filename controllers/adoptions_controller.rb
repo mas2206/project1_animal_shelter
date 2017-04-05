@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('../models/adoption')
+require_relative('../models/adoption.rb')
 
 get '/adoptions' do
   @adoptions = Adoption.all()

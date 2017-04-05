@@ -1,7 +1,10 @@
-<h1>All adoptions</h1>
+<br/>
+<br/>
+
+<a class="sub_header_link" href="/adoptions/new">Set up new adoption</a>
 
 <% @adoptions.each do |adoption| %>
   <p>Animal: <%= adoption.animal.name %> the <%= adoption.animal.type %></p>
-  <p>New Owner: <%= adoption.owner.name %></p>
+  <p>Owned by: <%= adoption.owner.name %></p>
   <hr/>
 <% end %>

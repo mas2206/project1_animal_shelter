@@ -1,0 +1,72 @@
+body {
+  background: url('/images/background.jpg');
+  background-size: 100%;
+}
+
+a:hover {
+  color: red;
+}
+
+nav {
+  text-align: center;
+}
+
+body {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 5px;
+}
+
+h1 {
+  font-family: Arial;
+  font-size: 30px;
+}
+
+p {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.header_link {
+  font-family: Copperplate;
+  font-size: 50px;
+  font-weight: bold;
+  color: green;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.sub_header_link {
+  font-family: Copperplate;
+  font-size: 30px;
+  font-weight: bold;
+  color: blue;
+}
+
+.welcome_text {
+  font-size: 30px;
+  color: purple;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.animals_view_filter {
+  font-size: 20px;
+  color: gold;
+  font-family: Futura;
+  text-decoration: none;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.drop_down_menu {
+  height: 50px;
+  width: 120px;
+  font-size: large;
+}
