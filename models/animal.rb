@@ -3,6 +3,7 @@ require_relative('../db/sql_runner')
 class Animal
 
   attr_reader :id, :name, :type, :admission_date, :availability
+  attr_writer :availability
 
   def initialize(options)
     @id = options['id'].to_i
@@ -12,6 +13,13 @@ class Animal
     @availability = options['availability']
   end
 
+  def owner()
+    sql = "SELECT owners.* from owners INNER JOIN adoptions ON adoptions.owner_id = owners.id WHERE animal_id = #{@id};"
+    owners = SqlRunner.run(sql)
+    result = owners.map {|owner| Owner.new(owner)}
+    return result
+  end
+
   def save()
     sql = "INSERT INTO animals (name, type, admission_date, availability) VALUES ('#{@name}', '#{@type}', '#{@admission_date}', '#{@availability}') RETURNING *;"
     results = SqlRunner.run(sql)
@@ -19,18 +27,28 @@ class Animal
   end
 
   def update()
-    sql = "UPDATE animals SET name = '#{@name}', type = '#{@type}', admission_date = '#{@admission_date}', availability = '#{@availability}' WHERE id = '#{@id}'"
+    sql = "UPDATE animals SET name = '#{@name}', type = '#{@type}', admission_date = '#{@admission_date}', availability = '#{@availability}' WHERE id = '#{@id}';"
     SqlRunner.run(sql)
   end
 
+  def become_adopted()
+    @availability = 'f'
+    update()
+  end
+
+  def become_available()
+    @availability = 't'
+    update()
+  end
+
   def self.get_adoptable()
-    sql = "SELECT * FROM animals WHERE availability = true"
+    sql = "SELECT * FROM animals WHERE availability = true;"
     results = SqlRunner.run(sql)
     return results.map {|animals_hash| Animal.new(animals_hash)}
   end
 
   def self.get_non_adoptable()
-    sql = "SELECT * FROM animals WHERE availability = false"
+    sql = "SELECT * FROM animals WHERE availability = false;"
     results = SqlRunner.run(sql)
     return results.map {|animals_hash| Animal.new(animals_hash)}
   end

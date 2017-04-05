@@ -2,8 +2,12 @@
 
 <% @owners.each do |owner| %>
   <p>Name: <%= owner.name %></p>
+  <p>Adopted animals: 
+  <% owner.animals.each do |animal| %>
+  <p><%= animal.name %> the <%= animal.type %></p>
+  <% end %>
   <form method="get" action="/owners/<%= owner.id %>/update">
-    <input type="submit" value="Update owner"/>
+    <input type="submit" value="Update owner name"/>
   </form>
 
   <br/>

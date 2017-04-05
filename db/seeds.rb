@@ -3,17 +3,15 @@ require_relative('../models/owner')
 require_relative('../models/adoption')
 require('pry-byebug')
 
-
 Adoption.delete_all()
 Owner.delete_all()
 Animal.delete_all()
-
 
 animal1 = Animal.new({
   "name" => "Rover",
   "type" => "dog",
   "admission_date" => "2016-12-25",
-  "availability" => false
+  "availability" => true
   })
 
 animal2 = Animal.new({
@@ -34,7 +32,7 @@ animal4 = Animal.new({
   "name" => "Goldy",
   "type" => "goldfish",
   "admission_date" => "2017-01-22",
-  "availability" => false
+  "availability" => true
   })
 
 animal5 = Animal.new({
@@ -48,7 +46,7 @@ animal6 = Animal.new({
   "name" => "Gerry",
   "type" => "gerbil",
   "admission_date" => "2017-02-02",
-  "availability" => false
+  "availability" => true
   })
 
 animal7 = Animal.new({
@@ -65,7 +63,6 @@ animal4.save()
 animal5.save()
 animal6.save()
 animal7.save()
-
 
 owner1 = Owner.new({
   "name" => "Zsolt"
@@ -92,7 +89,6 @@ owner2.save()
 owner3.save()
 owner4.save()
 owner5.save()
-
 
 adoption1 = Adoption.new({
   "animal_id" => animal1.id,
